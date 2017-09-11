@@ -19,21 +19,23 @@
     <section id="start-modal" class="start-modal">
       <article class="start-modal-content">
 
-        <h1>Welcome to <br>Airless game</h1>
+        <h1>Welcome to<br>Airless game</h1>
 
         <p>You are about to start playing the game)</p>
         <button id="start" type="submit" name="start">start</button>
         <h7 id="h7" >i</h7>
-        <p id="info" class="hidden">You will have to avoid collision with moving rectangles</p>
+        <p id="info" class="hidden">You will have to avoid collisions with moving rectangles
+          <img src="https://s3.us-east-2.amazonaws.com/clone-app-dev/scheme-02-01.svg" alt="">
+        </p>
       </article>
-      <div class="start-modal-screen js-hide-modal"></div>
+      <div class="modal-screen js-hide-modal"></div>
     </section>
 
     <!-- ________________________end modal_________________________ -->
     <section id="modal" class="modal">
       <article class="modal-content">
 
-        <h1>You lost</h1>
+        <h1>Game Over</h1></h1>
 
         <p>Wanna try again?</p>
         <button id='startover' type="submit" name="start">start over</button>
@@ -42,22 +44,23 @@
     </section>
     <!-- _________________________________________________ -->
     <div class="canvasCont">
-      <div class="">
+      <div class="main">
+        <h1>Airless</h1>
 
         <div class="score">
-          <h3> Your score is: <h3 id=score></h3></h3>
+        <h3>Your score is:</h3><h3 id=score></h3>
 
         </div>
         <canvas height=600 width=400></canvas>
         <div class="links">
           <ul>
-            <li><a href="mischatch.github.io"> Mikhail <br>Cheburakhtin</a></li>
+
             <li>
               <a href="https://github.com/mischatch">
                 <i class="devicon-github-plain"></i>
                 <br>GitHub</a>
             </li>
-
+            <li><a href="mischatch.github.io">Mikhail<br>Cheburakhtin</a></li>
             <li>
               <a href="https://www.linkedin.com/in/mikhail-cheburakhtin/">
                 <img src="https://s3.us-east-2.amazonaws.com/clone-app-dev/linkedin_blue.svg" class="linkedin" alt="">
