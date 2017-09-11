@@ -13,7 +13,8 @@ Airless is a platforming game where the aim is to escape collision between blue 
 
 The app will consist of on level. The hardness of a game will be slowly increasing by the increasing score value. Next to implement: particle emmiter, x-move of tiles, random changing size of a circle.
 
-![wireframes](https://s3.us-east-2.amazonaws.com/clone-app-dev/wire1.png)
+![wireframes](https://s3.us-east-2.amazonaws.com/clone-app-dev/wire1.1.png)
+![wireframes](https://s3.us-east-2.amazonaws.com/clone-app-dev/wire1.2.png)
 
 # Architecture and Technologies
 
