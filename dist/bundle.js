@@ -99,9 +99,8 @@ let gameArea = {
   score: 0,
   start: () => {
     gameArea.score = 0;
-    interval = setInterval(updateGameArea, 500);
+    interval = setInterval(updateGameArea, 1500);
   },
-
   clear: () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   },
@@ -127,6 +126,7 @@ function Circle(x, y, rad, color){
   };
 }
 
+let dy = 1;
 
 function Obstacle(x, y, w, h, color){
   this.x = x;
@@ -146,18 +146,19 @@ function Obstacle(x, y, w, h, color){
   };
 
   this.move = () => {
-    this.y += 1;
+    this.y += dy;
   };
 }
 
 function obstacleInit(){
   let wid = twoRandomWidth();
-  let h = Math.random() * 40 + 5;
+  let h = Math.random() * 20 + 5;
   let color = '#ff7171';
   return [new Obstacle(0, Math.random() * -10, wid[0], h, color),
           new Obstacle(canvas.width - wid[1], Math.random() * -10, wid[1], h, color)];
 }
 
+let animUpdate = 90;
 
 function updateGameArea(){
   gameAnimation = requestAnimationFrame(updateGameArea);
@@ -170,12 +171,22 @@ function updateGameArea(){
   circle2.update();
   obstacle.forEach((obst) => {
     if (collisions(circle2, obst)){
+      animUpdate = 90;
+      dy = 1;
       cancelAnimationFrame(gameAnimation);
       modal();
     }
   });
 
-  if (gameAnimation % 75 === 0) {
+  if (gameArea.score % 1000 === 0){
+    animUpdate -= 10;
+    if(animUpdate <= 0){
+      animUpdate = 90;
+    }
+    dy += 0.2;
+  }
+
+  if (gameAnimation % animUpdate === 0) {
     obstacle = obstacle.concat(obstacleInit());
   }
   obstacle.forEach((obst) => {
@@ -252,7 +263,6 @@ function twoRandomWidth(){
 function collisions(obj1, obj2){
   const collX = between((obj1.x + obj1.rad), obj2.x, (obj2.x + obj2.w)) ||
      between((obj1.x - obj1.rad), obj2.x, (obj2.x + obj2.w));
-  // Y collision
   const collY = between((obj1.y + obj1.rad), obj2.y, (obj2.y + obj2.h)) ||
      between((obj1.y - obj1.rad), obj2.y, (obj2.y + obj2.h));
      if(collX && collY){
@@ -268,6 +278,9 @@ function between(val, lim1, lim2){
   }
   return false;
 }
+
+
+
 
 
 

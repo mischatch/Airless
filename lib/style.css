@@ -104,15 +104,15 @@ div.canvasCont {
   align-self: center;
   color: white;
   font-family: 'Bitter', serif;
-  transition-timing-function: ease-in-out;
+  transition:  300ms ease-in-out;
 }
 
 
 #start:hover {
-  filter: brightness(0.8);
+  background-color: #3669bd;
 }
 #startover:hover {
-  filter: brightness(0.8);
+  background-color: #3669bd;
 }
 
 
