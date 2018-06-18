@@ -110,6 +110,7 @@ div.canvasCont {
 
 #start:hover {
   background-color: #3669bd;
+  cursor: pointer;
 }
 #startover:hover {
   background-color: #3669bd;
