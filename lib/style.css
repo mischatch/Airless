@@ -184,6 +184,10 @@ h7 {
   color: #ff7171;
 }
 
+h7:hover {
+  cursor: pointer;
+}
+
 p#info {
   margin-top: 20px;
 }
